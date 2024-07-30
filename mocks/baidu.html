@@ -14,16 +14,19 @@
         }
         .container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             height: 100%;
+            padding-top: 2%; /* 减少顶部内边距 */
             background-color: white;
             color: black;
+            box-sizing: border-box;
         }
         .content {
             text-align: center;
             max-width: 640px;
             width: 90%;
+            margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -75,8 +78,7 @@
         }
         @media (max-height: 600px) {
             .container {
-                align-items: flex-start;
-                padding-top: 20px;
+                padding-top: 10px; /* 更小屏幕上的顶部内边距 */
             }
         }
         @supports (-webkit-touch-callout: none) {
