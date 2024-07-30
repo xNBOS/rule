@@ -13,25 +13,27 @@
         }
         .container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100%;
-            padding: 20px;
-            box-sizing: border-box;
             background-color: white;
             color: black;
         }
+        .content {
+            text-align: center;
+            max-width: 640px;
+            width: 90%;
+        }
         .logo {
             margin-bottom: 30px;
+        }
+        .logo img {
             max-width: 100%;
             height: auto;
         }
         .search-box {
             display: flex;
             width: 100%;
-            max-width: 640px;
-            margin-bottom: 20px;
         }
         #search-input {
             flex-grow: 1;
@@ -41,6 +43,7 @@
             border-right: none;
             border-radius: 10px 0 0 10px;
             outline: none;
+            -webkit-appearance: none;
         }
         #search-button {
             background-color: #4e6ef2;
@@ -50,19 +53,7 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 0 10px 10px 0;
-        }
-        @media (max-width: 480px) {
-            .container {
-                justify-content: flex-start;
-                padding-top: 15%;
-            }
-            .logo img {
-                width: 200px;
-                height: auto;
-            }
-            .search-box {
-                max-width: 90%;
-            }
+            -webkit-appearance: none;
         }
         @media (prefers-color-scheme: dark) {
             .container {
@@ -78,16 +69,23 @@
                 background-color: #303134;
             }
         }
+        @supports (-webkit-touch-callout: none) {
+            .container {
+                height: -webkit-fill-available;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度" width="270" height="129">
-        </div>
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="请输入搜索内容">
-            <button id="search-button">百度一下</button>
+        <div class="content">
+            <div class="logo">
+                <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度" width="270" height="129">
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="请输入搜索内容">
+                <button id="search-button">百度一下</button>
+            </div>
         </div>
     </div>
     <script>
