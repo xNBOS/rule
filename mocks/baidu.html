@@ -14,10 +14,10 @@
         }
         .container {
             display: flex;
-            flex-direction: column;
             justify-content: flex-start;
+            align-items: center;
             height: 100%;
-            padding-top: 10vh; /* 使用视口高度的百分比 */
+            padding-top: 2%; /* 减少顶部内边距 */
             background-color: white;
             color: black;
             box-sizing: border-box;
@@ -31,7 +31,7 @@
             box-sizing: border-box;
         }
         .logo {
-            margin-bottom: 20px; /* 减少logo下方的间距 */
+            margin-bottom: 30px;
         }
         .logo img {
             max-width: 100%;
@@ -76,9 +76,9 @@
                 background-color: #303134;
             }
         }
-        @media (max-height: 500px) {
+        @media (max-height: 600px) {
             .container {
-                padding-top: 10px; /* 更小屏幕上的固定内边距 */
+                padding-top: 10px; /* 更小屏幕上的顶部内边距 */
             }
         }
         @supports (-webkit-touch-callout: none) {
