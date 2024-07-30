@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>百度一下，你就知道</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
+            background-color: white;
+        }
+        .container {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: white;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .logo {
             margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
         }
         .search-box {
             display: flex;
-            border: 1px solid #4e6ef2;
-            border-radius: 10px;
-            overflow: hidden;
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 20px;
         }
         #search-input {
-            width: 400px;
+            flex-grow: 1;
             padding: 10px;
             font-size: 16px;
-            border: none;
+            border: 2px solid #4e6ef2;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
             outline: none;
         }
         #search-button {
@@ -38,16 +48,36 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 0 10px 10px 0;
+        }
+        @media (max-width: 480px) {
+            .logo img {
+                width: 200px;
+                height: auto;
+            }
+            .search-box {
+                flex-direction: column;
+            }
+            #search-input {
+                border-right: 2px solid #4e6ef2;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            #search-button {
+                border-radius: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度" width="270" height="129">
-    </div>
-    <div class="search-box">
-        <input type="text" id="search-input" placeholder="请输入搜索内容">
-        <button id="search-button">百度一下</button>
+    <div class="container">
+        <div class="logo">
+            <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度" width="270" height="129">
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="请输入搜索内容">
+            <button id="search-button">百度一下</button>
+        </div>
     </div>
     <script>
         document.getElementById('search-button').addEventListener('click', function() {
